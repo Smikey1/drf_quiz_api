@@ -5,6 +5,7 @@ from .helpers import success,failure
 from rest_framework import status,viewsets
 from .models import *
 from .serializers import *
+import random
 
 # welcome api page
 @api_view(['get'])
@@ -72,3 +73,13 @@ class CategoryViewSet(viewsets.ModelViewSet):
             return Response(failure("Category not found", status.HTTP_404_NOT_FOUND))
         except Exception as ex:
             return Response(failure(f"Exception: {ex}", status.HTTP_500_INTERNAL_SERVER_ERROR))
+
+class QuestionAPIView(APIView):
+    def get(self, request):
+        try:
+            question_objs = list(Question.objects.all())
+            random.shuffle(question_objs)  # Shuffle the questions
+            serializer = QuestionSerializer(question_objs, many=True)
+            return Response(success("Question Fetched Successfully", serializer.data, status.HTTP_200_OK))
+        except Exception as ex:
+            return Response(failure("Something went wrong", str(ex)))

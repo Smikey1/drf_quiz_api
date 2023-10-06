@@ -15,3 +15,24 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         exclude = ["created_at","updated_at"]
+
+class AnswerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Answer
+        exclude = ["created_at","updated_at","question"]
+
+
+class QuestionSerializer(serializers.ModelSerializer):
+    category = CategorySerializer()
+    answers = AnswerSerializer(many=True, read_only=True)
+    options = serializers.SerializerMethodField()
+
+    def get_options(self, obj):
+        ordered_queryset = Answer.objects.filter(question=obj).order_by('?')
+        return AnswerSerializer(ordered_queryset, many=True, context=self.context).data
+
+    class Meta:
+        model = Question
+        # fields=("_id",'category','question_text','mark',"choices")
+        fields="__all__"
+        depth = 1

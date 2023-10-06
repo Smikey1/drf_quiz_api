@@ -11,7 +11,8 @@ urlpatterns = [
     path('', index, name="index"),
     path('category', CategoryView.as_view()),
     path('category/<str:category_id>', CategoryView.as_view()),
-    path('category/', include(router.urls)),
+    path('category', include(router.urls)),
+    path('question', QuestionAPIView.as_view()),
 ]
 
 # urlpatterns += router.urls
