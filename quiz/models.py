@@ -9,3 +9,10 @@ class BaseModel(models.Model):
 
     class Meta:
         abstract = True
+
+class Category(BaseModel):
+    category_name = models.CharField(max_length=150)
+    def __str__(self):
+        return self.category_name
+    class Meta:
+        verbose_name_plural = 'Categories'

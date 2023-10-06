@@ -1,0 +1,5 @@
+@BASE_URL = http://127.0.0.1:8000/category
+
+# Get All Category
+GET {{BASE_URL}}
+###
