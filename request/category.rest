@@ -3,3 +3,33 @@
 # Get All Category
 GET {{BASE_URL}}
 ###
+
+# Get Category By Id
+GET {{BASE_URL}}/id/629170e9-f15c-4c23-a9f7-07bd435fd8ef
+Content-Type: application/json
+###
+
+# Add Category
+POST {{BASE_URL}}
+Content-Type: application/json
+
+{
+    "category_name": "Bank"
+}
+###
+
+
+# Update Category
+PATCH {{BASE_URL}}/f7935e6f-4e89-4f7c-94e4-76d005638b1a
+Content-Type: application/json
+
+{
+    "category_name": "School"
+}
+###
+
+
+# Delete Category
+DELETE {{BASE_URL}}/f7935e6f-4e89-4f7c-94e4-76d005638b1a
+Content-Type: application/json
+###
