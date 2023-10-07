@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'quiz',
     'accounts',
+    'score',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'rest_framework'
