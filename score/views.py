@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view,permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import ScoreSerializer
-from .helpers import success,failure
+from utils.json_message import success,failure
 from rest_framework.permissions import IsAuthenticated
 from .models import ScoreModel
 
