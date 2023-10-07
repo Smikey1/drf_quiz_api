@@ -1,6 +1,6 @@
 @BASE_URL = http://127.0.0.1:8000/score
 
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2NjY0MTUyLCJpYXQiOjE2OTY2NjMyNTIsImp0aSI6IjhhOTU4OGUyYjM1YTQyYmQ4ZjkzOTA2YWRlMzFmYzk3IiwidXNlcl9pZCI6OH0.GcT9q-z_JVIatsb8DQpQhtpZ3QurbdInuJuEL8tgx1Q
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2NjcxMDI0LCJpYXQiOjE2OTY2NzAxMjQsImp0aSI6ImRhMGE0MzFmZTEzODRiNTVhZDAzZjA1MjhhOWZmY2FlIiwidXNlcl9pZCI6OX0.IzpLSvlPbGndu6rXqeoJRCIeIuu1v0qb2cdUjcRghBc
 
 # Add Score
 POST {{BASE_URL}}-add
@@ -8,7 +8,7 @@ Content-Type: application/json
 Authorization: Bearer {{TOKEN}}
 
 {
-    "score_value":5
+    "score_value":11
 }
 
 ###
