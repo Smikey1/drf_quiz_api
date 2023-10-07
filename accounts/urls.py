@@ -15,5 +15,6 @@ urlpatterns = [
     path("user/logout", user_logout_view, name="logout_user"),
     path("user/register", user_register_view, name="register"),
     path("user/profile", user_profile_view, name="profile"),
-    path("score", get_user_score, name="profile"),
+    path("score", get_user_score, name="get_user_score"),
+    path("score-add", add_score, name="add_score")
 ]

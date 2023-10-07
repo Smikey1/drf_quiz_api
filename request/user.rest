@@ -7,10 +7,10 @@ POST {{BASE_URL}}/register
 Content-Type: application/json
 
 {
-    "first_name":"Quiz",
-    "last_name":"Boy",
-    "username": "qb",
-    "email":"user@quiz.com",
+    "first_name":"Smikey",
+    "last_name":"Bros",
+    "username": "sb",
+    "email":"sb@quiz.com",
     "password":"123456",
     "confirm_password":"123456"
 }
@@ -22,7 +22,7 @@ POST {{BASE_URL}}/login
 Content-Type: application/json
 
 {
-    "username":"qb",
+    "username":"sb",
     "password":"123456"
 }
 

@@ -96,3 +96,27 @@ def get_user_score(request):
         return Response(failure("No scores found for the user", status.HTTP_404_NOT_FOUND))
     except Exception as ex:
         return Response(failure("Failed to get scores", status.HTTP_500_INTERNAL_SERVER_ERROR))
+
+
+@api_view(["POST"])
+@permission_classes([IsAuthenticated])
+def add_score(request):
+    try:
+        # Retrieve the authenticated user's user profile
+        user_profile = request.user.userprofile
+
+        # Get the score data from the request data
+        score_data = {
+            'user': user_profile._id,
+            'score_value': request.data.get('score_value', 0)  # You can change the field name as needed
+        }
+
+        # Create a new score instance
+        score_serializer = ScoreSerializer(data=score_data)
+        if score_serializer.is_valid():
+            score_serializer.save()
+            return Response(success(message="Score added successfully", status=status.HTTP_201_CREATED))
+        else:
+            return Response(failure("Invalid score data", status.HTTP_400_BAD_REQUEST))
+    except Exception as ex:
+        return Response(failure("Failed to add score", status.HTTP_500_INTERNAL_SERVER_ERROR))
