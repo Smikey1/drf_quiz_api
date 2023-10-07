@@ -5,7 +5,7 @@ GET {{BASE_URL}}
 ###
 
 # Get Category By Id
-GET {{BASE_URL}}/id/629170e9-f15c-4c23-a9f7-07bd435fd8ef
+GET {{BASE_URL}}/id/9df30e51-67d0-4724-8c85-259a205307c5
 Content-Type: application/json
 ###
 
