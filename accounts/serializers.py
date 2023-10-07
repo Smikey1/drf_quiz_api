@@ -3,7 +3,7 @@ from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework import status
 from .helpers import success,failure
-from .models import UserProfile
+from .models import *
 import uuid as unique_id
 from django.utils import timezone
 
@@ -70,3 +70,9 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         user_profile.save()
 
         return user
+
+
+class ScoreSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ScoreModel
+        fields = "__all__"

@@ -1,6 +1,6 @@
 @BASE_URL = http://127.0.0.1:8000/user
 
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2NjUzNjI3LCJpYXQiOjE2OTY2NTI3MjcsImp0aSI6ImEyYjQ0MWQ0ZGYzNDQ1NzZhMDkwYzgzMWE1ZTI1Yjc1IiwidXNlcl9pZCI6MX0.Kx0P979AsC4wkGgM8kThMtxsNAa4wDld-QEm8wuJP2g
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2NjU5Nzc2LCJpYXQiOjE2OTY2NTg4NzYsImp0aSI6ImE0N2RhY2U2N2IyMDRmMGRhZDZiNjAxNTA4MDk3NGQwIiwidXNlcl9pZCI6N30.K2aQrgbyjh2i0W8wtERuAULIfB4knJA4_NR2OqlQGWc
 
 # Register Request
 POST {{BASE_URL}}/register
@@ -22,7 +22,7 @@ POST {{BASE_URL}}/login
 Content-Type: application/json
 
 {
-    "username":"quiz",
+    "username":"qb",
     "password":"123456"
 }
 

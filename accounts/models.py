@@ -38,3 +38,15 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+class ScoreModel(BaseModel):
+    user = models.ForeignKey(UserProfile, related_name='scores', on_delete=models.CASCADE)
+    score_date = models.DateTimeField(auto_now=True)
+    score_value = models.IntegerField(default=0)
+
+    class Meta:
+        verbose_name_plural = 'User Scores'
+
+    def __str__(self):
+        full_name = f"{self.user.first_name} {self.user.last_name}"
+        return f"{full_name}"

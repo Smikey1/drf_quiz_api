@@ -9,6 +9,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .helpers import success,failure
 from rest_framework.permissions import IsAuthenticated
 from .models import *
+from rest_framework.generics import ListAPIView
 
 
 @api_view(["POST"])
@@ -82,3 +83,16 @@ def user_profile_view(request):
     except UserProfile.DoesNotExist:
         return Response(failure(message="User profile not found", status=status.HTTP_404_NOT_FOUND))
 
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def get_user_score(request):
+    try:
+        # Retrieve scores for the authenticated user's user profile
+        user_scores = request.user.userprofile.scores.all()
+        # user_scores = ScoreModel.objects.filter(user=request.user)
+        serializer = ScoreSerializer(user_scores, many=True)
+        return Response(success("All Scores Fetched Successfully", serializer.data, status.HTTP_200_OK))
+    except ScoreModel.DoesNotExist:
+        return Response(failure("No scores found for the user", status.HTTP_404_NOT_FOUND))
+    except Exception as ex:
+        return Response(failure("Failed to get scores", status.HTTP_500_INTERNAL_SERVER_ERROR))
