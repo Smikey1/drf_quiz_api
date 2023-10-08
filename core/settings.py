@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 from datetime import timedelta
+import dj_database_url
 import os
 
 load_dotenv()
@@ -32,9 +33,10 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #TODO 2: Replace your DEBUG here i.e TRUE
-DEBUG = os.environ.get("DEBUG")
+DEBUG = os.environ.get("DEBUG","False").lower()=="true"
 
-ALLOWED_HOSTS = []
+#TODO 3: Replace your HOST here
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS","False").split(" ")
 
 
 # Application definition
@@ -68,13 +70,10 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
 ]
 
+
 # Cors Allowed Origins
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:3000",
-    "http://127.0.0.1:8000",
-]
+#TODO 4: Replace your CORS_ALLOWED_ORIGINS here
+CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS").split(" ")
 
 # Allowing UI Tweaks to the admin panel
 JAZZMIN_SETTINGS["show_ui_builder"] = True
@@ -110,6 +109,12 @@ DATABASES = {
     }
 }
 
+#TODO 5: Replace your DATABASE URL here
+DATABASE_URL = os.environ.get("DATABASE_URL")
+
+DATABASES = {
+    'default': dj_database_url.config(default=DATABASE_URL)
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
