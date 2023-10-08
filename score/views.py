@@ -5,6 +5,7 @@ from .serializers import ScoreSerializer
 from utils.json_message import success,failure
 from rest_framework.permissions import IsAuthenticated
 from .models import ScoreModel
+from accounts.models import UserProfile
 
 
 @api_view(["GET"])

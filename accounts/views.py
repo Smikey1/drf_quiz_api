@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view,permission_classes
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.authtoken.models import Token
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate,logout
 from .serializers import *
 from rest_framework_simplejwt.tokens import RefreshToken
 from utils.json_message import success,failure
@@ -11,9 +11,8 @@ from .models import *
 
 @api_view(["POST"])
 def user_logout_view(request):
-    if request.method == "POST":
-        request.user.auth_token.delete()
-        return Response(success(message= "You are logged out", status=status.HTTP_200_OK))
+    logout(request)
+    return Response(success(message= "logged out successful", status=status.HTTP_200_OK))
 
 @api_view(["POST"])
 def user_register_view(request):

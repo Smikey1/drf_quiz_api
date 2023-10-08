@@ -1,6 +1,6 @@
 @BASE_URL = http://127.0.0.1:8000/user
 
-@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2NjcyMjgwLCJpYXQiOjE2OTY2NzEzODAsImp0aSI6IjBhYTJmYWI2MTg1MzRlNThhYjg4NTcxMTljODEyOWFiIiwidXNlcl9pZCI6OX0.8WR7OyIBNpe-RM27tU0Db6ysm8ObPc0u0G8gIzDwbrY
+@TOKEN = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk2NzA2NjMzLCJpYXQiOjE2OTY3MDU3MzMsImp0aSI6ImVjYTQ5YjNiZTBjZDQ5YmVhNTU2ZDkwMjRjNjM4MmUyIiwidXNlcl9pZCI6OH0.307m4V1KuwgKcBl26oJV_gbJNHKmbUo6IbTvIk4a1u8
 
 # Register Request
 POST {{BASE_URL}}/register
@@ -30,6 +30,13 @@ Content-Type: application/json
 
 # Get User Detail
 GET {{BASE_URL}}/profile
+Content-Type: application/json
+Authorization: Bearer {{TOKEN}}
+
+###
+
+# Logout Request
+POST {{BASE_URL}}/logout
 Content-Type: application/json
 Authorization: Bearer {{TOKEN}}
 
