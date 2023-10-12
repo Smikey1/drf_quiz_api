@@ -36,7 +36,12 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG","False").lower()=="true"
 
 #TODO 3: Replace your HOST here
-ALLOWED_HOSTS = ["drf-quiz-react.onrender.com"]
+ALLOWED_HOSTS = [
+    "drf-quiz-react.onrender.com",
+    "drf-quiz-api.onrender.com",
+    "https://drf-quiz-react.onrender.com",
+    "https://drf-quiz-api.onrender.com"
+    ]
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS","False").split(" ")
 
 
@@ -77,7 +82,9 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:8000",
     "drf-quiz-react.onrender.com",
-    "https://drf-quiz-react.onrender.com"
+    "drf-quiz-api.onrender.com",
+    "https://drf-quiz-react.onrender.com",
+    "https://drf-quiz-api.onrender.com"
 ]
 # #TODO 4: Replace your CORS_ALLOWED_ORIGINS here
 # CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS").split(" ")
