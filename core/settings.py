@@ -78,8 +78,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "https://drf-quiz-react.onrender.com"
 ]
-#TODO 4: Replace your CORS_ALLOWED_ORIGINS here
-CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS").split(" ")
+# #TODO 4: Replace your CORS_ALLOWED_ORIGINS here
+# CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS").split(" ")
 
 # Allowing UI Tweaks to the admin panel
 JAZZMIN_SETTINGS["show_ui_builder"] = True
