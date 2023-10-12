@@ -37,6 +37,7 @@ DEBUG = os.environ.get("DEBUG","False").lower()=="true"
 
 #TODO 3: Replace your HOST here
 ALLOWED_HOSTS = [
+    "127.0.0.1",
     "drf-quiz-react.onrender.com",
     "drf-quiz-api.onrender.com",
     "https://drf-quiz-react.onrender.com",
