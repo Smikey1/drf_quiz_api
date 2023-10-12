@@ -9,8 +9,8 @@ Content-Type: application/json
 {
     "first_name":"Smikey",
     "last_name":"Bros",
-    "username": "sb",
-    "email":"sb@quiz.com",
+    "username": "sb1",
+    "email":"sb1@quiz.com",
     "password":"123456",
     "confirm_password":"123456"
 }

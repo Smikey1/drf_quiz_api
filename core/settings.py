@@ -36,7 +36,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG","False").lower()=="true"
 
 #TODO 3: Replace your HOST here
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS","False").split(" ")
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS","False").split(" ")
 
 
 # Application definition
@@ -114,7 +115,7 @@ DATABASES = {
     }
 }
 
-#TODO 5: Replace your DATABASE URL here
+# # TODO 5: Replace your DATABASE URL here
 DATABASE_URL = os.environ.get("DATABASE_URL")
 
 DATABASES = {
