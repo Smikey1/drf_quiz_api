@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = os.environ.get("DEBUG","False").lower()=="true"
 
 #TODO 3: Replace your HOST here
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["drf-quiz-react.onrender.com"]
 # ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS","False").split(" ")
 
 
