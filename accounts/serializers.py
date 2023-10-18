@@ -47,7 +47,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
         # Create the UserProfile instance and associate it with the User
         full_name = f'{first_name} {last_name}'
-        avatarUrl = rf'https://ui-avatars.com/api/?background=random&name=${full_name}'
+        avatarUrl = rf'https://ui-avatars.com/api/?background=random&name={full_name}'
 
         # Get the current date and time in the UTC time zone
         current_datetime_utc = timezone.now()
