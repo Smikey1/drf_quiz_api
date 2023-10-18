@@ -22,7 +22,7 @@ load_dotenv()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # for django setting
-JAZZMIN_SETTINGS= {}
+# JAZZMIN_SETTINGS= {}
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -49,7 +49,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -91,7 +91,7 @@ CORS_ALLOWED_ORIGINS = [
 # CORS_ALLOWED_ORIGINS = os.environ.get("CORS_ALLOWED_ORIGINS").split(" ")
 
 # Allowing UI Tweaks to the admin panel
-JAZZMIN_SETTINGS["show_ui_builder"] = True
+# JAZZMIN_SETTINGS["show_ui_builder"] = True
 
 ROOT_URLCONF = 'core.urls'
 
